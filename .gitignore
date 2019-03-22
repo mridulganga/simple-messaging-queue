@@ -1,0 +1,4 @@
+venv/
+.vscode/
+__pycache__/
+client/smqc/__pycache__/
