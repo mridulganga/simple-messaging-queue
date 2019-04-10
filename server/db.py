@@ -65,8 +65,6 @@ def generate_token():
     return rand_token
 
 
-add_user
-remove_user
 
 
 
