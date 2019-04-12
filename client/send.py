@@ -1,7 +1,7 @@
 from smqc import smqc
 
 
-queue = smqc.Connection("localhost",5000)
+queue = smqc.Connection("localhost",5000, "mridulganga", "password123")
 
 key = input("Enter the key: ")
 
