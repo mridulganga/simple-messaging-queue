@@ -3,13 +3,13 @@ import datetime
 import time
 
 class User:
-    server_address = "http://localhost:5000"
+    server_address = "http://sample-test-sample-app.1d35.starter-us-east-1.openshiftapps.com"
 
     def __init__(self, server):
         self.server_address = server
 
-    def __init__(self, host, port):
-        self.server_address = "http://" + host + ":" + str(port)
+    # def __init__(self, host, port):
+    #     self.server_address = "https://" + host + ":" + str(port)
 
     def create_user(self, username, password, email):
         body = {
@@ -54,8 +54,8 @@ class Connection:
         r = requests.post(self.server_address + "/login-session", json=body, headers={"content-type":"application/json"})
         self.token = r.json()["token"]
 
-    def __init__(self, host, port, username, password):
-        self.server_address = "http://" + host + ":" + str(port)
+    def __init__(self, host, username, password):
+        self.server_address = host
         self.username = username
         self.password = password 
         self.get_token()
@@ -92,7 +92,7 @@ class Connection:
         if from_time:
             self.previous_timestamp = from_time
         else:
-            self.previous_timestamp = str(datetime.datetime.today())
+            self.previous_timestamp = str(datetime.datetime.utcnow())
         while(1):
             messages = self.get_message_after(key, self.previous_timestamp)
             

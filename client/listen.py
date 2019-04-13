@@ -1,6 +1,6 @@
 from smqc import smqc
 
-queue = smqc.Connection("localhost",5000,"mridulganga", "password123")
+queue = smqc.Connection("http://sample-test-sample-app.1d35.starter-us-east-1.openshiftapps.com","mridulganga", "password123")
 
 key = input("Enter key: ")
 

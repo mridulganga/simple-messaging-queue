@@ -1,6 +1,7 @@
 from smqc import smqc
 
-user = smqc.User("localhost",5000)
+user = smqc.User("http://sample-test-sample-app.1d35.starter-us-east-1.openshiftapps.com")
+print("success connection")
 # print(user.create_user("akanksha","password123","akanksha@gmail.com"))
 # print(user.create_user("mridulganga","password123","mridul@gmail.com"))
 # print(user.create_admin("gopikakini","password123","gopika@gmail.com",["mridulganga", "akanksha"]))
@@ -13,6 +14,6 @@ user = smqc.User("localhost",5000)
 
 
 # adding scopes
-# conn = smqc.Connection("localhost",5000,"gopikakini", "password123")
-# topics = ["main.child.topic1", "main.child.topic2"]
-# conn.update_scope("gopikakini", "mridulganga", topics)
+conn = smqc.Connection("http://sample-test-sample-app.1d35.starter-us-east-1.openshiftapps.com","gopikakini", "password123")
+topics = ["main.child.topic3", "main.child.topic2"]
+conn.update_scope("gopikakini", "akanksha", topics)
